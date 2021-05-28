@@ -56,6 +56,7 @@ TODO:
             [x] - Include all your create table queries
     
     -- HTML --
+    
         [ ] - HTML 5 setup
             [x] - To Do List Header
             [x] - Add item h2/h3?
@@ -77,11 +78,11 @@ TODO:
                 [ ] - Delete the data when clicked from DOM and Database
             [ ] - PUT or update the data to complete
                 [ ] - Update the data to show completed when 'Complete' is clicked
-        [ ] - Server.js
-            [ ] - Setup express
-            [ ] - Setup bodyParser
-            [ ] - Create todo_router.js
-            [ ] - Setup and listen on PORT 5000
+        [x] - Server.js
+            [x] - Setup express
+            [x] - Setup bodyParser
+            [x] - Create todo_router.js
+            [x] - Setup and listen on PORT 5000
         [ ] - todo_router.js
             [ ] - Setup express and router
             [ ] - Setup pg and pool

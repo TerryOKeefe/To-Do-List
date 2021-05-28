@@ -22,7 +22,7 @@ TODO:
     -- Setup --
     - [ ] PROJECT SETUP FILE STRUCTURE
         - [x] Make .gitignore file in root folder
-        - [ ] Make readme.md file in root folder (optional, but recommended)
+        - [x] Make readme.md file in root folder (optional, but recommended)
             - [x] Make server folder in root folder
                 - [x] Make server.js file in server folder
                 - [x] Make modules folder
@@ -45,15 +45,15 @@ TODO:
                     - [x] Make a routes folder
 
     -- Database --
-    [ ] - Create a Database called weekend-to-do-app
-        [ ] - Create a table 
-            CREATE TABLE songs (
+    [x] - Create a Database called weekend-to-do-app
+        [x] - Create a table 
+            CREATE TABLE todoList (
                 id SERIAL PRIMARY KEY,
                 notes VARCHAR(256),
-                isDone BOOLEAN
+                isDone BOOLEAN DEFAULT FALSE
             );
-        [ ] - Include database.sql text file
-            [ ] - Include all your create table queries
+        [x] - Include database.sql text file
+            [x] - Include all your create table queries
     
     -- HTML --
         [ ] - HTML 5 setup

@@ -5,12 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SQL To Do List</title>
-    <link rel="stylesheet" href="./vendors/bootstrap.css">
-    <link rel="stylesheet" href="./styles/style.css">
     <script src="./vendors/jquery-3.6.0.js"></script>
     <script src="./scripts/client.js"></script>
+    <link rel="stylesheet" href="./vendors/bootstrap.css">
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>To Do List</h1>
+    </header>
+    <main>
+        <section class="addItem">
+            <h4>Add Item</h3>
+            <label for="note">Note</label>
+            <input type="text" id="addnote" placeholder="Add Item to List"/>
+            <button type="button" id="submitBtn">Add</button>
+        </section>
+        <div class="itemList">
+            <h4>Things To Do</h3>
+        </div>
+
+    </main>
 </body>
 </html>

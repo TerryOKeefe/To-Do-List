@@ -57,12 +57,14 @@ TODO:
     
     -- HTML --
         [ ] - HTML 5 setup
-            [ ] - To Do List Header
-            [ ] - Add item h2/h3?
-            [ ] - Things to do h2/h3 
+            [x] - To Do List Header
+            [x] - Add item h2/h3?
+                [x] - Input field for item to do
+                [x] - Add/Submit item button
+            [x] - Things to do h2/h3 
             [ ] - Table setup?
         [ ] - Client.js
-            [ ] - jQuery setup
+            [x] - jQuery setup
             [ ] - Click Listener for Complete
             [ ] - Click Listener for Delete (dynamic)
             [ ] - GET the data

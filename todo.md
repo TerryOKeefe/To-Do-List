@@ -13,10 +13,10 @@ TODO:
 [x] - Deleting a Task should remove it both from the front end as well as the Database.
 
 -- Styling --
-[ ] - Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
-    [ ] - background color of the page
-    [ ] - font family and size
-    [ ] - text color and/or background color of tasks to show whether or not they have been completed
+[x] - Use CSS styling to move the aesthetic of the page beyond the vanilla HTML look:
+    [x] - background color of the page
+    [x] - font family and size
+    [x] - text color and/or background color of tasks to show whether or not they have been completed
 
 -- Approach --
     -- Setup --
@@ -56,10 +56,10 @@ TODO:
     -- HTML --
         [x] - HTML 5 setup
             [x] - To Do List Header
-            [x] - Add item h2/h3?
+            [x] - Add item h2/h3? -- maybe h4 looks better
                 [x] - Input field for item to do
                 [x] - Add/Submit item button
-            [x] - Things to do h2/h3 
+            [x] - Tasks to complete h2/h3 -- maybe h4 to keep uniform
             [x] - Table setup?
         [x] - Client.js
             [x] - jQuery setup

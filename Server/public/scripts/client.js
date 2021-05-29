@@ -102,15 +102,16 @@ function renderList(list) {
             $('#itemList').append(`
             <tr>
                 <td class="task">${task.notes}</td>
-                <td><button class="mark-complete" data-id="${task.id}">Complete</button></td>
-                <td><button class="delete-item" data-id="${task.id}">Delete</button></td>
+                <td><button class="mark-complete btn-success btn-sm" data-id="${task.id}">Complete</button></td>
+                <td><button class="delete-item btn-danger" data-id="${task.id}">Delete</button></td>
             </tr>
         `);
         } else if (task.isDone === true) {
             $('#completed-task').append(`
             <tr>
                 <td class="task">${task.notes}</td>
-                <td><button class="delete-item" data-id="${task.id}">Delete</button></td>
+                <td><button class="mark-complete" disabled data-id="${task.id}">Completed</button></td>
+                <td><button class="delete-item btn-danger" data-id="${task.id}">Delete</button></td>
             </tr>
             `);
         }

@@ -1,15 +1,35 @@
+h1 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+}
+
+h4 {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
 body {
     background-color: rgb(232, 242, 246);
+    padding: 2em;
+}
+
+td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.addItem {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.completedDisplay {
+    padding-top: 20px;
 }
 
 #itemList {
-    background-color: lightgray;
+    background-color: rgb(203, 202, 202);
 }
 
 #completed-task {
     background-color: rgb(173, 223, 173);
-}
-
-.hightlight {
-    background-color: rgb(129, 171, 129);
 }

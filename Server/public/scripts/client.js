@@ -2,15 +2,17 @@ console.log('JS Loaded!');
 
 $(document).ready(readyNow);
 
+// on document ready start readyNow
 function readyNow() {
     // console log to show jQuery loaded
     console.log('jQuery Loaded!');
+    // call getList go append DB to DOM
     getList();
     
-    // Click Listener for submit button
+    // click Listener for submit button
     $('#submitBtn').on('click', postList);
 
-    // Click listener for dynamic delete button
+    // click listener for dynamic delete button
     $('#itemList').on('click', '.delete-item', deleteItemHandler);
     $('#completed-task').on('click', '.delete-item', deleteItemHandler);
 
@@ -57,7 +59,7 @@ function deleteItemHandler() {
     deleteItem($(this).data("id"));
 }// end deleteItem
 
-// Delete specific item by id
+// DELETE specific item by id
 function deleteItem(listId) {
     $.ajax({
         method: 'DELETE',
@@ -73,7 +75,7 @@ function deleteItem(listId) {
     });
 } // end deleteItem
 
-// function to get books and render to page
+// GET books and render to page
 function getList() {
     $.ajax({
         method: 'GET',
@@ -90,12 +92,16 @@ function getList() {
 
 // render the list items or tasks to the DOM
 function renderList(list) {
+    // empty the tasks to complete on DOM
     $('#itemList').empty();
+    // empty the completed tasks on DOM
     $('#completed-task').empty();
+
+    // loop through tasks to determine where they go on DOM
     for (let i = 0; i < list.length; i++) {
         // console log to see what we get at .notes
-        console.log(list[i].notes);
-        
+        console.log('Task added to list', list[i].notes);
+        // let task be the variable for each list item coming in
         let task = list[i];
 
         // append a new row on the DOM for each item
@@ -103,8 +109,16 @@ function renderList(list) {
             $('#itemList').append(`
             <tr>
                 <td class="task">${task.notes}</td>
-                <td><button class="mark-complete btn-success btn-sm" data-id="${task.id}">Complete</button></td>
-                <td><button class="delete-item btn-danger" data-id="${task.id}">Delete</button></td>
+                <td>
+                    <button class="mark-complete btn-success btn-sm" 
+                        data-id="${task.id}">Complete
+                    </button>
+                </td>
+                <td>
+                    <button class="delete-item btn-danger btn-sm"
+                        data-id="${task.id}">Delete
+                    </button>
+                </td>
             </tr>
         `);
         // if the task is true render that into the completed section
@@ -112,15 +126,25 @@ function renderList(list) {
             $('#completed-task').append(`
             <tr>
                 <td class="task">${task.notes}</td>
-                <td><button class="mark-complete" disabled data-id="${task.id}">Completed</button></td>
-                <td><button class="delete-item btn-danger" data-id="${task.id}">Delete</button></td>
+                <td>
+                    <button class="mark-complete btn-sm" 
+                        disabled data-id="${task.id}">Completed
+                    </button>
+                </td>
+                <td>
+                    <button class="delete-item btn-danger btn-sm" 
+                        data-id="${task.id}">Delete
+                    </button>
+                </td>
             </tr>
             `);
+        } else {
+            console.log('Error rendering tasks to DOM');
         }
     }
 } // end renderList
 
-// function to POST new data
+// POST new data
 function postList() {
     // console log to show click listener works
     console.log('Clicked Submit');
@@ -128,7 +152,7 @@ function postList() {
     // create new variable to gather input
     let listObject = {
         notes: $('#addNote').val()
-    }
+    };
     $.ajax({
         method: 'POST',
         url: '/list',

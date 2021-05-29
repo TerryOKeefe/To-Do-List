@@ -5,6 +5,7 @@ h1 {
 
 h4 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-decoration: underline;
 }
 
 body {
@@ -24,10 +25,6 @@ td {
 
 .completedDisplay {
     padding-top: 20px;
-}
-
-#itemList {
-    background-color: rgb(203, 202, 202);
 }
 
 #completed-task {

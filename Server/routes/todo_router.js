@@ -5,7 +5,9 @@ const pool = require('../modules/pool');
 
 // GET all notes
 router.get('/', (req, res) => {
+    // variable to tell SQL what to run
     let queryText = 'SELECT * FROM "list" ORDER BY "id" DESC;';
+
     pool.query(queryText)
     .then( (result) => {
         // sends back the results in an object
@@ -42,8 +44,11 @@ router.post('/', (req, res) => {
 
 // DELETE selected item by id
 router.delete('/:id', (req, res) => {
+    // this is the id we want to target on click
     const itemToDelete = req.params.id;
+    // variable to tell SQL what to run with sanitation
     const queryString = `DELETE FROM "list" WHERE "list".id = $1;`;
+
     pool.query(queryString, [itemToDelete])
     .then( (response) => {
         // console log the targeted id to show in terminal
@@ -63,7 +68,7 @@ router.delete('/:id', (req, res) => {
 router.put('/:id', (req, res) => {
     // the requested list id and set to a variable
     const listId = req.params.id;
-    // need to change false to true
+    // need a way to change false to true
     // set a variable to be the incoming boolean
     let taskDone = req.body.complete;
     // console log to see what came through on req.body.complete

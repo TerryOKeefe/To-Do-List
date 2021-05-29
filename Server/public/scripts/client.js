@@ -71,7 +71,7 @@ function deleteItem(listId) {
         // send a pop up message for error
         alert('There was a problem deleting that item', error)
     });
-}
+} // end deleteItem
 
 // function to get books and render to page
 function getList() {
@@ -88,6 +88,7 @@ function getList() {
     });
 } // end getList
 
+// render the list items or tasks to the DOM
 function renderList(list) {
     $('#itemList').empty();
     $('#completed-task').empty();
@@ -106,6 +107,7 @@ function renderList(list) {
                 <td><button class="delete-item btn-danger" data-id="${task.id}">Delete</button></td>
             </tr>
         `);
+        // if the task is true render that into the completed section
         } else if (task.isDone === true) {
             $('#completed-task').append(`
             <tr>
@@ -115,9 +117,8 @@ function renderList(list) {
             </tr>
             `);
         }
-        
     }
-}
+} // end renderList
 
 // function to POST new data
 function postList() {

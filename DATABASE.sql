@@ -10,6 +10,7 @@ VALUES
 	('Do laundry', 'false'),
 	('Clean dishes', 'false'),
 	('Make the bed', 'false'),
-	('Mop the kitchen', 'false');
+	('Mop the kitchen', 'false'),
+	('Walk the dog', 'true');
 	
 SELECT * FROM "list";

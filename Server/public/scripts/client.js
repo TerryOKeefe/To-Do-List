@@ -11,16 +11,36 @@ function readyNow() {
     $('#submitBtn').on('click', postList);
 
     // Click listener for dynamic delete button
-    $('#itemList').on('click', '.delete-item', deleteItem)
+    $('#itemList').on('click', '.delete-item', deleteItemHandler)
 
 } // end readyNow
 
 // function to delete selected item
-function deleteItem() {
+function deleteItemHandler() {
     // console log to show delete button clicked
     console.log('Clicked Delete');
-    
+    // call deleteItem using .this for specific id
+    deleteItem($(this).data("id"));
 }// end deleteItem
+
+// Delete specific item by id
+function deleteItem(listId) {
+    $.ajax({
+        method: 'DELETE',
+        url: `/list/${listId}`
+    }).then( (response) => {
+        // console log response
+        console.log('Deleted:', response);
+        // call getList to render DOM again
+        getList();
+    }).catch( (error) => {
+        // send a pop up message for error
+        alert('There was a problem deleting that item', error)
+    });
+}
+
+
+
 
 // function to get books and render to page
 function getList() {

@@ -63,19 +63,19 @@ TODO:
                 [x] - Input field for item to do
                 [x] - Add/Submit item button
             [x] - Things to do h2/h3 
-            [ ] - Table setup?
+            [x] - Table setup?
         [ ] - Client.js
             [x] - jQuery setup
             [ ] - Click Listener for Complete
-            [ ] - Click Listener for Delete (dynamic)
+            [x] - Click Listener for Delete (dynamic)
             [ ] - GET the data
                 [x] - Append the data to the DOM
                 [x] - Dynamic Delete button
                 [ ] - Dynamic Complete button
             [x] - Post the data
                 [x] - Send the values to the server
-            [ ] - DELETE the data when clicked
-                [ ] - Delete the data when clicked from DOM and Database
+            [x] - DELETE the data when clicked
+                [x] - Delete the data when clicked from DOM and Database
             [ ] - PUT or update the data to complete
                 [ ] - Update the data to show completed when 'Complete' is clicked
         [x] - Server.js
@@ -89,7 +89,7 @@ TODO:
                 [x] - module.exports = router; 
             [x] - GET
             [x] - POST
-            [ ] - DELETE
+            [x] - DELETE
             [ ] - PUT
 
                 

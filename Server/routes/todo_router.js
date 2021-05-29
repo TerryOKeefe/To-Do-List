@@ -60,5 +60,24 @@ router.post('/', (req, res) => {
     })
 });
 
+// DELETE selected item by id
+router.delete('/:id', (req, res) => {
+    const itemToDelete = req.params.id;
+    const queryString = `DELETE FROM "list" WHERE "list".id = $1;`;
+    pool.query(queryString, [itemToDelete])
+    .then( (response) => {
+        // console log the targeted id to show in terminal
+        console.log(`We deleted item with id ${itemToDelete}`);
+        // send an OK status (200)
+        res.sendStatus(200);
+    })
+    .catch( (error) => {
+        // console log the error
+        console.log('Error in deleting item', error);
+        // send a 500 status
+        res.sendStatus(500);
+    });
+});
+
 
 module.exports = router;

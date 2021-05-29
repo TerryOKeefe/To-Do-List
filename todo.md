@@ -69,11 +69,11 @@ TODO:
             [ ] - Click Listener for Complete
             [ ] - Click Listener for Delete (dynamic)
             [ ] - GET the data
-                [ ] - Append the data to the DOM
+                [x] - Append the data to the DOM
                 [ ] - Dynamic Delete button
                 [ ] - Dynamic Complete button
-            [ ] - Post the data
-                [ ] - Send the values to the server
+            [x] - Post the data
+                [x] - Send the values to the server
             [ ] - DELETE the data when clicked
                 [ ] - Delete the data when clicked from DOM and Database
             [ ] - PUT or update the data to complete
@@ -87,8 +87,8 @@ TODO:
             [x] - Setup express and router
             [x] - Setup pg and pool
                 [x] - module.exports = router; 
-            [ ] - GET
-            [ ] - POST
+            [x] - GET
+            [x] - POST
             [ ] - DELETE
             [ ] - PUT
 

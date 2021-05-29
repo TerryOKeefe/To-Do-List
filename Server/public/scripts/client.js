@@ -28,6 +28,9 @@ function getList() {
             $('#itemList').append(`
                 <tr>
                     <td>${response[i].notes}</td>
+                    <td>
+                        <button class="delete-item" data-id="${response[i].id}">Delete</button>
+                    </td>
                 </tr>
             `);
         }

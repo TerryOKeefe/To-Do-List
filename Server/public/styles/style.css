@@ -5,3 +5,11 @@ body {
 #itemList {
     background-color: lightgray;
 }
+
+#completed-task {
+    background-color: rgb(173, 223, 173);
+}
+
+.hightlight {
+    background-color: rgb(129, 171, 129);
+}

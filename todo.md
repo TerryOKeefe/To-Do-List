@@ -4,12 +4,12 @@ TODO:
 [x] - Create a front end experience that allows a user to create a Task
 [x] - When the Task is created, it should be stored inside of a database (SQL)
 [x] - Whenever a Task is created the front end should refresh to show all tasks that need to be completed
-[ ] - Each Task should have an option to 'Complete' or 'Delete'
-[ ] - When a Task is complete, its visual representation should change on the front end.
-    [ ] - IE: The background of the task container could change from gray to green. 
-    [ ] - The complete option should be 'checked off'.
-        [ ] - Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
-[ ] - Whether or not a Task is complete should also be stored in the database.
+[x] - Each Task should have an option to 'Complete' or 'Delete'
+[x] - When a Task is complete, its visual representation should change on the front end.
+    [x] - IE: The background of the task container could change from gray to green. 
+    [x] - The complete option should be 'checked off'.
+        [x] - Each of these are accomplished in CSS, but will need to hook into logic to know whether or not the task is complete.
+[x] - Whether or not a Task is complete should also be stored in the database.
 [x] - Deleting a Task should remove it both from the front end as well as the Database.
 
 -- Styling --
@@ -43,7 +43,6 @@ TODO:
                         - [x] Add jQuery.js file here
                         - [x] Source in bootstrap if you like
                     - [x] Make a routes folder
-
     -- Database --
     [x] - Create a Database called weekend-to-do-app
         [x] - Create a table 
@@ -54,21 +53,19 @@ TODO:
             );
         [x] - Include database.sql text file
             [x] - Include all your create table queries
-    
     -- HTML --
-
-        [ ] - HTML 5 setup
+        [x] - HTML 5 setup
             [x] - To Do List Header
             [x] - Add item h2/h3?
                 [x] - Input field for item to do
                 [x] - Add/Submit item button
             [x] - Things to do h2/h3 
             [x] - Table setup?
-        [ ] - Client.js
+        [x] - Client.js
             [x] - jQuery setup
-            [ ] - Click Listener for Complete
+            [x] - Click Listener for Complete
             [x] - Click Listener for Delete (dynamic)
-            [ ] - GET the data
+            [x] - GET the data
                 [x] - Append the data to the DOM
                 [x] - Dynamic Delete button
                 [x] - Dynamic Complete button
@@ -77,13 +74,13 @@ TODO:
             [x] - DELETE the data when clicked
                 [x] - Delete the data when clicked from DOM and Database
             [x] - PUT or update the data to complete
-                [ ] - Update the data to show completed when 'Complete' is clicked
+                [x] - Update the data to show completed when 'Complete' is clicked
         [x] - Server.js
             [x] - Setup express
             [x] - Setup bodyParser
             [x] - Create todo_router.js
             [x] - Setup and listen on PORT 5000
-        [ ] - todo_router.js
+        [x] - todo_router.js
             [x] - Setup express and router
             [x] - Setup pg and pool
                 [x] - module.exports = router; 

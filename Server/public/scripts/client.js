@@ -11,7 +11,8 @@ function readyNow() {
     $('#submitBtn').on('click', postList);
 
     // Click listener for dynamic delete button
-    $('#itemList').on('click', '.delete-item', deleteItemHandler)
+    $('#itemList').on('click', '.delete-item', deleteItemHandler);
+    $('#completed-task').on('click', '.delete-item', deleteItemHandler);
 
     // click listener for dynamic complete button
     $('#itemList').on('click', '.mark-complete', markTaskHandler);
@@ -74,35 +75,48 @@ function deleteItem(listId) {
 
 // function to get books and render to page
 function getList() {
-    $('#itemList').empty();
     $.ajax({
         method: 'GET',
         url: '/list'
     }).then( (response) => {
         // console log the response
         console.log('this is from the server:', response);
-        for (let i = 0; i < response.length; i++) {
-            // console log to see what we get at .notes
-            console.log(response[i].notes);
-
-            // append a new row on the DOM for each item
-            $('#itemList').append(`
-                <tr>
-                    <td>${response[i].notes}</td>
-                    <td>
-                        <button class="mark-complete" data-id="${response[i].id}">Mark Completed</button>
-                    </td>
-                    <td>
-                        <button class="delete-item" data-id="${response[i].id}">Delete</button>
-                    </td>
-                </tr>
-            `);
-        }
+        renderList(response);
     }).catch( (error) => {
         // console log errors if any show
         console.log('error in GET', error);
     });
 } // end getList
+
+function renderList(list) {
+    $('#itemList').empty();
+    $('#completed-task').empty();
+    for (let i = 0; i < list.length; i++) {
+        // console log to see what we get at .notes
+        console.log(list[i].notes);
+        
+        let task = list[i];
+
+        // append a new row on the DOM for each item
+        if (task.isDone === false) {
+            $('#itemList').append(`
+            <tr>
+                <td class="task">${task.notes}</td>
+                <td><button class="mark-complete" data-id="${task.id}">Complete</button></td>
+                <td><button class="delete-item" data-id="${task.id}">Delete</button></td>
+            </tr>
+        `);
+        } else if (task.isDone === true) {
+            $('#completed-task').append(`
+            <tr>
+                <td class="task">${task.notes}</td>
+                <td><button class="delete-item" data-id="${task.id}">Delete</button></td>
+            </tr>
+            `);
+        }
+        
+    }
+}
 
 // function to POST new data
 function postList() {

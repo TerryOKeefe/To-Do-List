@@ -20,7 +20,7 @@ TODO:
 
 -- Approach --
     -- Setup --
-    - [ ] PROJECT SETUP FILE STRUCTURE
+    - [x] PROJECT SETUP FILE STRUCTURE
         - [x] Make .gitignore file in root folder
         - [x] Make readme.md file in root folder (optional, but recommended)
             - [x] Make server folder in root folder
@@ -71,12 +71,12 @@ TODO:
             [ ] - GET the data
                 [x] - Append the data to the DOM
                 [x] - Dynamic Delete button
-                [ ] - Dynamic Complete button
+                [x] - Dynamic Complete button
             [x] - Post the data
                 [x] - Send the values to the server
             [x] - DELETE the data when clicked
                 [x] - Delete the data when clicked from DOM and Database
-            [ ] - PUT or update the data to complete
+            [x] - PUT or update the data to complete
                 [ ] - Update the data to show completed when 'Complete' is clicked
         [x] - Server.js
             [x] - Setup express
@@ -90,7 +90,7 @@ TODO:
             [x] - GET
             [x] - POST
             [x] - DELETE
-            [ ] - PUT
+            [x] - PUT
 
                 
 

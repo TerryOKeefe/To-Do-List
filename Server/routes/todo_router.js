@@ -79,5 +79,41 @@ router.delete('/:id', (req, res) => {
     });
 });
 
+// PUT or UPDATE selected item by id
+router.put('/:id', (req, res) => {
+    // the requested list id and set to a variable
+    const listId = req.params.id;
+    // need to change false to true
+    // set a variable to be the incoming boolean
+    let taskDone = req.body.complete;
+    // console log to see what came through on req.body.complete
+    console.log('The boolean sent over:', taskDone);
+    // set a variable to change boolean in conditional
+    let queryBoolean;
+    // conditional to run when Mark Completed is clicked
+    if (taskDone === "true") {
+        queryBoolean = `UPDATE "list" SET "isDone"=true WHERE "list".id = $1;`;
+    } else {
+        // send an error (500) status
+        res.sendStatus(500);
+        // early exit for error
+        return;
+    }
+
+    // take in the two parameters to query
+    pool.query(queryBoolean, [listId])
+    .then( (response) => {
+        // console log the rowCount
+        console.log(response.rowCount);
+        // send a good status (202) accepted
+        res.sendStatus(202);
+    }).catch( (error) => {
+        // console log the error
+        console.log('Task did not get marked true.', error);
+        // send back a (500) status
+        res.sendStatus(500);
+    });
+});
+
 
 module.exports = router;

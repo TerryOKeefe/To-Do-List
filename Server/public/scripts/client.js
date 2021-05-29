@@ -13,7 +13,40 @@ function readyNow() {
     // Click listener for dynamic delete button
     $('#itemList').on('click', '.delete-item', deleteItemHandler)
 
+    // click listener for dynamic complete button
+    $('#itemList').on('click', '.mark-complete', markTaskHandler);
+
 } // end readyNow
+
+// UPDATE task to show completed
+function markTaskDone (listId, taskDone){
+    $.ajax({
+        method: 'PUT',
+        url: `/list/${listId}`,
+        data: {
+            complete: taskDone
+        }
+    }).then ( response => {
+        // console log to show task is marked completed
+        console.log('Task is Completed!');
+        // refresh DOM to show completed
+        getList();
+    }).catch( error => {
+        // console log any errors
+        console.log('Error marking task as complete', error);
+        // display alert window for any errors
+        alert('There was a problem completing task. Please try again.')
+    });
+} // end markTaskDone
+
+// handle the completed task click
+function markTaskHandler () {
+    // console log to show complete button clicked
+    console.log('Clicked Complete!');
+    // at this target task mark complete
+    markTaskDone($(this).data("id"), "true");
+} // end markTaskHandler
+
 
 // function to delete selected item
 function deleteItemHandler() {
@@ -39,9 +72,6 @@ function deleteItem(listId) {
     });
 }
 
-
-
-
 // function to get books and render to page
 function getList() {
     $('#itemList').empty();
@@ -59,6 +89,9 @@ function getList() {
             $('#itemList').append(`
                 <tr>
                     <td>${response[i].notes}</td>
+                    <td>
+                        <button class="mark-complete" data-id="${response[i].id}">Mark Completed</button>
+                    </td>
                     <td>
                         <button class="delete-item" data-id="${response[i].id}">Delete</button>
                     </td>

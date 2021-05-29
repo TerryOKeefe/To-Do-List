@@ -56,7 +56,7 @@ TODO:
             [x] - Include all your create table queries
     
     -- HTML --
-    
+
         [ ] - HTML 5 setup
             [x] - To Do List Header
             [x] - Add item h2/h3?
@@ -84,9 +84,9 @@ TODO:
             [x] - Create todo_router.js
             [x] - Setup and listen on PORT 5000
         [ ] - todo_router.js
-            [ ] - Setup express and router
-            [ ] - Setup pg and pool
-            [ ] - module.exports = router; 
+            [x] - Setup express and router
+            [x] - Setup pg and pool
+                [x] - module.exports = router; 
             [ ] - GET
             [ ] - POST
             [ ] - DELETE

@@ -14,17 +14,27 @@
     <header>
         <h1>To Do List</h1>
     </header>
-    <main>
-        <section class="addItem">
+    
+    <div class="addItem">
             <h4>Add Item</h3>
             <label for="note">Note</label>
             <input type="text" id="addnote" placeholder="Add Item to List"/>
             <button type="button" id="submitBtn">Add</button>
-        </section>
-        <div class="itemList">
-            <h4>Things To Do</h3>
-        </div>
+    </div>
+    <section class="tableDisplay">
+        <h4>Things to do</h4>
+        <table id="tableWrapper">
+            <thead>
+                <tr>
+                </tr>
+            </thead>
+            <tbody id="itemList">
 
-    </main>
+            </tbody>
+    </table>
+</section>    
+        
+
+    
 </body>
 </html>

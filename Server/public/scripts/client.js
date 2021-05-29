@@ -6,6 +6,9 @@ function readyNow() {
     // console log to show jQuery loaded
     console.log('jQuery Loaded!');
     getList();
+    
+    // Click Listener
+    $('#submitBtn').on('click', postList);
 } // end readyNow
 
 // function to get books and render to page
@@ -33,3 +36,24 @@ function getList() {
         console.log('error in GET', error);
     });
 } // end getList
+
+// function to POST new data
+function postList() {
+    // console log to show click listener works
+    console.log('Clicked Submit');
+    
+    // create new variable to gather input
+    let listObject = {
+        notes: $('#addNote').val()
+    }
+    $.ajax({
+        method: 'POST',
+        url: '/list',
+        data: listObject
+    }).then( (response) => {
+        // empty the input field
+        $('#addNote').val('');
+        // call getList to show new item on the DOM
+        getList();
+    });
+} // end postList

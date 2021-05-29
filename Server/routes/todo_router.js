@@ -39,5 +39,26 @@ router.get('/', (req, res) => {
     });
 });
 
+// POST new notes
+router.post('/', (req, res) => {
+    // sanitize new data coming in
+    let queryText = `INSERT INTO "list" ("notes")
+    VALUES ($1);`;
+    // variable to hold requested input value
+    let values = [req.body.notes];
+
+    pool.query(queryText, values)
+    .then( (result) => {
+        // send a created (201) status
+        res.sendStatus(201);
+    })
+    .catch( (error) => {
+        // log in terminal any errors
+        console.log('Error posting list', error);
+        // send a (500) status
+        res.sendStatus(500);
+    })
+});
+
 
 module.exports = router;

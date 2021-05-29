@@ -70,7 +70,7 @@ TODO:
             [ ] - Click Listener for Delete (dynamic)
             [ ] - GET the data
                 [x] - Append the data to the DOM
-                [ ] - Dynamic Delete button
+                [x] - Dynamic Delete button
                 [ ] - Dynamic Complete button
             [x] - Post the data
                 [x] - Send the values to the server

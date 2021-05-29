@@ -7,9 +7,20 @@ function readyNow() {
     console.log('jQuery Loaded!');
     getList();
     
-    // Click Listener
+    // Click Listener for submit button
     $('#submitBtn').on('click', postList);
+
+    // Click listener for dynamic delete button
+    $('#itemList').on('click', '.delete-item', deleteItem)
+
 } // end readyNow
+
+// function to delete selected item
+function deleteItem() {
+    // console log to show delete button clicked
+    console.log('Clicked Delete');
+    
+}// end deleteItem
 
 // function to get books and render to page
 function getList() {
